@@ -348,6 +348,26 @@ END NORMALIZE CSS
   box-sizing: border-box;
 }
 
+/* CUSTOM FOR THIS PROJECT */
+.main-title {
+  font-size: 3rem;
+  color: black;
+  background-color: #aee6ce;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 5px 7px lightgray;
+}
+
+header {
+  background-color: #333;
+}
+
+main {
+  background-color: #aee6ce;
+}
+
+
 html,
 body {
   min-height: 100%;
