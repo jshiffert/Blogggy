@@ -26,15 +26,19 @@ router.get('/post/:id', withAuth, async (req, res) => {
     try{
         const singlePost = await Post.findByPk(req.params.id);
 
-        const post = singlePost.map((project) => project.get({ plain: true }));
+        const post = singlePost.get({ plain: true });
         
-        res.render('dashboard', {
+        res.render('edit-post', {
             post,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
+router.get('/new', (req,res) => {
+    res.render('new-post');
+});
 
 module.exports = router;
