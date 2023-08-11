@@ -1,9 +1,9 @@
 {{> post-details post1}}
 
-{{#if loggedIn}}
-<form class="form">
+{{#if logged_in}}
+<form class="comment-form">
   <div class="form-textarea"> 
-    <textarea name="comment-body"></textarea>
+    <textarea name="comment-body" id="comment-body"></textarea>
   </div>
 
   <div class="btn">
@@ -14,6 +14,6 @@
 
 {{> comments post1.comments}}
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+{{#if logged_in}}
+<script src="/js/comment.js"></script>
 {{/if}}

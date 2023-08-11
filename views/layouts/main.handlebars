@@ -15,7 +15,7 @@
         <nav class="p-3">
           <a class="m-2 h2" href="/">Home</a>
           <a class="m-2 h2" href="/dashboard">Dashboard</a>
-          {{#if loggedIn}}
+          {{#if logged_in}}
           <a class="m-2 h2" href="/" id="logout">Logout</a>
           {{else}}
           <a class="m-2 h2" href="/login">Login</a>
@@ -30,11 +30,13 @@
       {{{ body }}}
     </main>
     <footer>
-      
+      {{#if logged_in}}
+      <p>HIIIIII</p>
+      {{/if}}
     </footer>
   </div>
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

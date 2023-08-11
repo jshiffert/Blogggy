@@ -23,7 +23,8 @@ router.get('/', async (req, res) => {
         const posts = postData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
-            posts
+            posts,
+            logged_in: req.session.logged_in,
         });
         // res.status(200).json(postData);
     } catch (err) {
@@ -32,7 +33,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       res.redirect('/');
       return;
     }
@@ -60,7 +61,8 @@ router.get('/post/:id', async (req, res) => {
         const post1 = singlePost.get({ plain: true });
 
         res.render('one-post', {
-            post1
+            post1,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);

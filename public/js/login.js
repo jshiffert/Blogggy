@@ -20,9 +20,11 @@ const loginFormHandler = async (event) => {
         alert('Failed to log in');
       }
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+};
+
+// document.getElementById("signup-btn").addEventListener("click", window.location='/signup');
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
   
