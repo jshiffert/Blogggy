@@ -56,12 +56,12 @@ router.get('/post/:id', async (req, res) => {
                 },
             ],
         });
-        const post = singlePost.map((project) => project.get({ plain: true }));
 
-        res.render('homepage', {
-            post
+        const post1 = singlePost.get({ plain: true });
+
+        res.render('one-post', {
+            post1
         });
-        // res.status(200).json(singlePost)
     } catch (err) {
         res.status(500).json(err);
     }
