@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try{
         const singlePost = await Post.findByPk(req.params.id);
 

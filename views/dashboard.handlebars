@@ -1,0 +1,25 @@
+{{#if logged_in}}
+<section>
+  <h2>Your Posts</h2>
+  <ol class="post-list">
+    {{#each posts as |post|}}
+    <article class="card">
+        <div class="p-2 display-flex">
+            <div class="title">
+                <a id="dashpost" href="/dashboard/edit/{{id}}">{{title}}</a>
+            </div>
+            <div style="margin-left: auto" class="subtitle">
+                {{format_date date}}
+            </div>
+        </div>
+    </article>
+    {{/each}}
+  </ol>
+</section>
+{{else}}
+<section>
+  <h3>You need to log in to view your posts.</h3>
+</section>
+{{/if}}
+
+<button type="button"><a href="/dashboard/newpost">New Post</a></button>

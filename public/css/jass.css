@@ -360,6 +360,11 @@ END NORMALIZE CSS
   box-shadow: 5px 7px lightgray;
 }
 
+#dashpost {
+  color:#1a1a1a;
+  font-size: 1.75rem;
+}
+
 .post {
   background-color: #aee6ce;
   margin-bottom: 2%;
