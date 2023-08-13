@@ -86,14 +86,14 @@ router.put('/:id', withAuth, async (req,res) => {
     }
 });
 
-router.delete('/:id', withAuth, (req,res) => {
+router.delete('/:id', withAuth, async (req,res) => {
     try {
-        const postData = Post.destroy({
+        const postData = await Post.destroy({
             where: {
                 id: req.params.id,
             }
         });
-        if (!postData[0]) {
+        if (!postData) {
             res.status(404).json({ message: 'No post with this id.' });
             return;
         }
